@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 
 import { createTableUser } from "./Usuario.js";
 import router from "./routes.js";
@@ -6,6 +7,32 @@ import router from "./routes.js";
 const app = express();
 
 createTableUser();
+
+//app.use(cors());
+//app.use(cors({origin: 'https://www.youtube.com/'})); 
+//https://www.youtube.com/
+
+const corsOptions = {
+    origin: '*',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+  };
+
+// const corsOptions = {
+//     origin: function (origin, callback) {
+//       const allowedOrigins = ['http://youtube.com', 'http://google.com']; // Origem permitida
+//       if (allowedOrigins.indexOf(origin) !== -1) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error('Acesso negado por CORS!'));
+//       }
+//     },
+//     methods: ['GET', 'POST'], // Métodos permitidos
+//     allowedHeaders: ['Content-Type', 'Authorization'], // Cabeçalhos permitidos
+//   };
+  
+  // Usar CORS com as opções configuradas
+app.use(cors(corsOptions));
 
 app.use(express.json());
 

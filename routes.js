@@ -1,4 +1,5 @@
 import { Router }  from 'express';
+import cors from "cors";
 
 import { deleteUsuarioByID, getAllUsuarios, getUsuarioByID, insertUsuario, updateUsuario } from './Usuario.js';
 
@@ -11,15 +12,15 @@ router.get("/", function (req, res){
     });
 });
   
-router.get('/usuarios', getAllUsuarios);
+router.get('/v1/usuarios', getAllUsuarios);
 
-router.get('/usuario', getUsuarioByID);
+router.get('/v1//usuario', getUsuarioByID);
 
-router.post('/usuario', insertUsuario);
+router.post('/v1//usuario', insertUsuario);
 
-router.delete('/usuario', deleteUsuarioByID);
+router.delete('/v1//usuario', deleteUsuarioByID);
 
-router.put('/usuario', updateUsuario);
+router.put('/v1//usuario', updateUsuario);
 
 
 export default router;
