@@ -1,0 +1,21 @@
+INSERT INTO Notification (
+    articleId,
+    secao,
+    titulo,
+    texto,
+    dataPublicacaoJornal,
+    dataPublicacao,
+    dataCriacao,
+    publicado,
+    lido
+) VALUES (
+    'teste2',
+    'teste2',
+    'teste2',
+    'teste2',
+    'teste2',
+    'teste2',
+    'teste2',
+    'teste2',
+    1
+);
