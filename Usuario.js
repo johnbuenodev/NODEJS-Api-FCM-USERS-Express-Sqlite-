@@ -80,8 +80,9 @@ export async function getAllNotification(req, res) {
     .then(
       resultDB => {
         res.json({
-          "notification": resultDB,
-          "statusCode": 200
+          resultDB
+          //"notification": resultDB,
+          //"statusCode": 200
         });
       }
     )
