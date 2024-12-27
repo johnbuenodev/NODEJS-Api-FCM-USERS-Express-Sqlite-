@@ -79,11 +79,13 @@ export async function getAllNotification(req, res) {
     await db.all('SELECT * FROM Notification')
     .then(
       resultDB => {
-        res.json({
+        res.json(
+          //{
           resultDB
           //"notification": resultDB,
           //"statusCode": 200
-        });
+      //  }
+      );
       }
     )
   });
